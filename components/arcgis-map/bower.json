@@ -1,0 +1,27 @@
+{
+    "name": "arcgis-map",
+    "homepage": "http://blackhawkwebcomponents.github.io/arcgis-map",
+    "description": "",
+    "main": "arcgis-map.html",
+    "authors": [
+        "Rob Beers"
+    ],
+    "license": "Apache2",
+    "version": "0.0.1",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "../"
+    ],
+    "keywords": [
+        "web-component",
+        "web-components",
+        "polymer"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#master"
+    }
+}

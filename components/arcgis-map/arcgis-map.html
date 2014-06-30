@@ -1,0 +1,61 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="arcgis-import.html">
+
+<!--
+Element providing arcgis map
+
+##### Example
+
+    <arcgis-map></arcgis-map>
+
+@element arcgis-map
+@blurb Element providing arcgis map
+@status alpha
+@url http://blackhawkwebcomponents.github.io/arcgis-map
+-->
+<polymer-element name="arcgis-map">
+    <template>
+        <!-- TODO: put these in an import so they are not loaded if used elsewhere -->
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+        <style>
+            html, body, #mapDiv{
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+        </style>
+
+        <div id="map"></div>
+
+    </template>
+    <script>
+        Polymer('arcgis-map', {
+            /**
+             * The Google map object.
+             *
+             * @property map
+             * @type arcgis.Map
+             * @default null
+             */
+            map: null,
+
+            ready: function() {
+
+                require(["esri/map", "dojo/domReady!"], (function(Map) {
+                    this.map = new Map(this.$.map, {
+                        center: [-56.049, 38.485],
+                        zoom: 3,
+                        basemap: "streets"
+                    });
+                }).bind(this));
+
+                //this.updateCenter();
+                //this.updateMarkers();
+
+                this.fire('arcgis-map-ready');
+            }
+        });
+    </script>
+</polymer-element>
+

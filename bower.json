@@ -1,0 +1,7 @@
+{
+  "name": "arcgis-map#gh-pages",
+  "private": true,
+  "dependencies": {
+    "arcgis-map": "BlackhawkWebComponents/arcgis-map#master"
+  }
+}
